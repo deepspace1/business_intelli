@@ -1,0 +1,6 @@
+# Ignore local config files and virtual envs
+/app/config.py
+.env
+.venv/
+venv/
+__pycache__/

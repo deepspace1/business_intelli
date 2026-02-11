@@ -36,6 +36,30 @@ You can reference them in README or the UI like:
 
 - Config values are intentionally simple and hardcoded for ease of local development (see `app/config.py`).
 - The agent can operate without LangChain installed; installing `langchain` enables the optional agent pattern.
+
+## Configuration & secrets
+
+Do NOT commit `app/config.py` with API keys or secrets. Configuration should come from environment variables or a local `app/config.py` copied from `app/config.example.py`.
+
+Required environment variables:
+
+- `GEMINI_API_KEY`
+- `GEMINI_MODEL` (optional; default shown in `app/config.example.py`)
+- `MONDAY_API_KEY`
+- `DEALS_BOARD_ID`
+- `WORK_ORDERS_BOARD_ID`
+
+Local development example (bash):
+
+```bash
+export GEMINI_API_KEY="..."
+export MONDAY_API_KEY="..."
+export DEALS_BOARD_ID="5026563889"
+export WORK_ORDERS_BOARD_ID="5026563899"
+streamlit run app.py
+```
+
+There is an `app/config.example.py` file you can copy and edit for local use. `.gitignore` now excludes `app/config.py` and `.env`.
 # Monday.com BI Agent - Minimal Backend
 
 A simple FastAPI application that connects to monday.com, fetches deals and work order data, cleans it, and answers founder-level business questions using LLM-powered insights.
