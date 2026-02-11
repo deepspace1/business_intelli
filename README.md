@@ -27,6 +27,11 @@ You can reference them in README or the UI like:
 
 ![Image 1](images/image1.png)
 
+![Image 1](images/image2.png)
+
+![Image 1](images/image3.png)
+
+
 ## Notes
 
 - Config values are intentionally simple and hardcoded for ease of local development (see `app/config.py`).
